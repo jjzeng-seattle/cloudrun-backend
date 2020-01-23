@@ -10,4 +10,4 @@ spec:
         - image: gcr.io/jjzeng-knative-dev/cloudrun-backend
           env:
             - name: TARGET # The environment variable printed out by the sample app
-              value: "from cloudrun backend"
+              value: "from cloudrun backend abcde"
