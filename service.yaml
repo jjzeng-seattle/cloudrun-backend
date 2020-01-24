@@ -7,7 +7,7 @@ spec:
   template:
     spec:
       containers:
-        - image: gcr.io/jjzeng-knative-dev/cloudrun-backend
+        - image: gcr.io/jjzeng-knative-dev/cloudrun-backend:latest
           env:
             - name: TARGET # The environment variable printed out by the sample app
               value: "from cloudrun backend JJ"
