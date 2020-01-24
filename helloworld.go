@@ -16,10 +16,15 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello test %s!\n", target)
 }
 
+func healthcheck_handler(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "OK")
+}
+
 func main() {
 	log.Print("helloworld: starting server...")
 
-	http.HandleFunc("/", handler)
+	http.HandleFunc("/work", handler)
+	http.HandleFunc("/healthcheck", healthcheck_handler)
 
 	port := os.Getenv("PORT")
 	if port == "" {
