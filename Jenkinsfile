@@ -7,7 +7,7 @@ pipeline {
             stage('Test') {
                 steps {
                     echo 'Hbaello World ...'
-                    gcloud auth activate-service-account  --key-file="$SERVICE_ACCOUNT_KEY"
+                    gcloud auth activate-service-account --key-file "$SERVICE_ACCOUNT_KEY"
                 }
             }
         }
