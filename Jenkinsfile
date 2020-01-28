@@ -6,8 +6,9 @@ pipeline {
         stages {
             stage('Test') {
                 steps {
-                    echo 'Hbaello World ...'
-                    gcloud auth activate-service-account --key-file "$SERVICE_ACCOUNT_KEY"
+                    withCredentials([file(credentialsId: 'jenkins-sa.json', variable: 'GC_KEY')]) {
+                      sh("gcloud auth activate-service-account --key-file $SERVICE_ACCOUNT_KEY")
+                    }
                 }
             }
         }
