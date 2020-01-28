@@ -11,7 +11,7 @@ spec:
         - command:
             - /bin/sh
             - '-c'
-            - curl --max-time 120 cloudrun-backend.default
+            - curl --max-time 110 cloudrun-backend.default
           image: 'appropriate/curl:latest'
           name: validate-deployment
       restartPolicy: Never
