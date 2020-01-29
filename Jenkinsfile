@@ -6,6 +6,7 @@ pipeline {
                     withCredentials([file(credentialsId: '83ced48e-9ec7-4381-a219-f9d6c11289cc', variable: 'SERVICE_ACCOUNT_KEY')]) {
                       sh("gcloud auth activate-service-account --key-file $SERVICE_ACCOUNT_KEY")
                       sh("gcloud builds submit --config cloudbuild.yaml .")
+                      sh("export")
                     }
                 }
             }

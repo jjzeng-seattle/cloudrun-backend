@@ -23,8 +23,8 @@ func healthcheck_handler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	log.Print("helloworld: starting server...")
 
-	http.HandleFunc("/work", handler)
 	http.HandleFunc("/healthcheck", healthcheck_handler)
+	http.HandleFunc("/", handler)
 
 	port := os.Getenv("PORT")
 	if port == "" {
